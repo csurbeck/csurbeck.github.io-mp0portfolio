@@ -42,10 +42,37 @@ main {
   cursor: pointer;
 }
 
-#dwnld-btn:hover {
-  background-color: rebeccapurple;
-  cursor: pointer;
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
+
+.ddcontent {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 100px;
+}
+
+/* Links inside the dropdown */
+.ddcontent a {
+  font-family: 'Manrope', sans-serif;
+  color: rgb(153, 91, 215);
+  text-align: center;
+  font-size: 12px;
+  padding: 6px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.ddcontent a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .ddcontent {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
 
 #header-name {
   font-family: 'Yatra One', cursive;
