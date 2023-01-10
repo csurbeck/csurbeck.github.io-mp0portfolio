@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset='utf-8' />
+    <title>MP0 Write-Up</title>
+    <link href='writeup.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Yatra+One&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <section id="header-bar">
+        <div id="header-name">
+          <a href="index.html"><button id="main-btn">Claire Surbeck</button></a>
+        </div>
+        <div id="header-bar-buttons">
+          <a href="resume/resume.html" class="header-btn"><button id="resume-btn" class="header-btn">Resume</button></a>
+          <a href="cheatsheet/cheatsheet.html" class="header-btn"><button>Cheatsheet</button></a>
+          <a href="writeup/writeup.html" class="header-btn"><button>MP0 Write Up</button></a>
+          <a href="aboutme/aboutme.html" class="header-btn"><button id="abtme-btn">About Me</button></a>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section>
+        <h2>MP0 Write-Up</h2>
+        <article class="alternating" id="overview">
+          <article>
+            <h4>Overview</h4>
+            <p>
+              I began building my website portfolio over winter break upon my completetion
+              of CSE154 in the fall quarter. It definitely felt like a daunting project to go about
+              as a self-directed endeavor, but I knew it wasn't something that would make itself and
+              it would be a great exercise and showcase of my web programming capabilites. For the
+              development of this site, I started by creating the header so I could navigate between
+              the pages I planned on building. From there, I developed my resume page where users
+              could both view my resume as well as download it. Next, I moved on to the development
+              of my 'About Me' page, where I contextualized my academic experience with coding and
+              tech and gave some personal information. Then, I began to build out my project pages,
+              which you can view from the front page of my website. In order to make this project
+              complient with the MP0 assignment, I simply added Cheatsheet and Write-Up pages and
+              added them to the navigation bar in the header. Additionally, I converted my interface
+              from operating as a single HTML document in which different sections were displayed
+              based of user events on screen by hiding and showing different sections to the
+              employment of a main HTML page from which the user could navigate to different
+              subpages.
+            </p>
+          </article>
+        </article>
+        <article id="issue">
+          <h4>Issues</h4>
+          <p>
+            An issue that I encountered on this assignment was configuring subpage navigation and
+            attaching css files to subpages. I learned that you didn't need to specify the folder
+            of the css files for subpages since the subpage css file was at the same level of the
+            HTML file that was referencing it. Unfortunately, an issue that I am still encountering
+            and haven't yet resolved is how to navigate between subpages. My website is set up to
+            successfully enable navigation from the home page to the different subpages, but when
+            the user attempts to navigate from one subpage to another (eg. from the cheatsheet page
+            to the 'about me' page), the browser displays a 404 File not Found error. I have a
+            suspicion this has to do with the user trying to navigate from one subpage level to
+            another without returning to the main home page level, but I am not sure how to resolve
+            this yet.
+          </p>
+        </article>
+        <article id="css-transition" class="alternating">
+          <article>
+            <h4>CSS Transition</h4>
+            <div>
+              <p>
+                The CSS transition that I implemented on this website causes elements to briefly
+                enlarge when the user hovers over them with their cursor. The HTML elements with this
+                feature on my website are my different project tiles on the home page as well as the
+                email and LinkedIn icons in my footer. I chose to integrate the transition on these
+                elements as visual feedback to the user as to which element their cursor is on, and if
+                it matches the element they wish to interact with.
+              </p>
+              <img src="writeupmats/csstransition.gif" alt="gif of my CSS transition">
+            </div>
+          </article>
+        </article>
+        <article id="takeaways-ft">
+          <h4>Key Takeaways</h4>
+          <p>
+            From this project, I grasped the usage of .then/.catch chains for handling fetch
+            requests to REST APIs. I also gained proficiency with integrating data from different
+            parts of my code to generate fetch requests with specific query parameters as well as
+            accessing and transforming data from the returned JSON object to create a nested HTML
+            element to attach to the DOM.
+          </p>
+          <p>
+            Moving forward, things I would do to improve this project that I didn't get a chance
+            to implement would be eliminating redundancy of generated characters so that
+            an individuals could only appear once on the family tree. In review, this project
+            allowed me to extensively experiment with handling APIs  and fetch requests and
+            further master my ability to generate HTML elements and manipulate the DOM.
+          </p>
+          <a href="gameoT-family-tree/index.html"><button id="gotft-btn">Visit this project!</button></a>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <section id="footer-bar">
+        <p>Let's Connect!</p>
+        <a href="https://www.linkedin.com/in/claire-surbeck/"><img id="linked-in" src="writeupmats/linkedin-icon.png" alt="LinkedIn Icon"></a>
+        <a href="mailto:csurbeck@uw.edu"><img id="email" src="writeupmats/email-icon.png" alt="Email Icon"></a>
+      </section>
+      <div id="icon-citation">
+        <p>
+          <a target="_blank" href="https://icons8.com/icon/pBIeObS8d0aU/circled-envelope">Circled Envelope</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
+        <p>
+          <a target="_blank" href="https://icons8.com/icon/62925/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
