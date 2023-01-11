@@ -60,7 +60,8 @@ main {
   color: rgb(153, 91, 215);
   text-align: center;
   font-size: 12px;
-  padding: 6px;
+  padding: 12px 16px;
+  margin-top: 0px;
   text-decoration: none;
   display: block;
 }
@@ -68,11 +69,9 @@ main {
 /* Change color of dropdown links on hover */
 .ddcontent a:hover {background-color: #ddd;}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .ddcontent {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.dropdown:hover .ddcontent {
+  display: block;
+}
 
 #header-name {
   font-family: 'Yatra One', cursive;
@@ -143,7 +142,6 @@ main {
   margin: 20px;
   width: 300px;
   height: 300px;
-  /*transition: transform .2s;*/
 }
 
 #projects article:hover {
