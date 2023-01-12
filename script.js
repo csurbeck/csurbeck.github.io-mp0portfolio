@@ -4,18 +4,6 @@
   window.addEventListener('load', init);
 
   function init() {
-    id("resume-btn").addEventListener("click", function() {
-      changePage("resume-page");
-    });
-    id("work-btn").addEventListener("click", function() {
-      changePage("work-page");
-    });
-    id("main-btn").addEventListener("click", function() {
-      changePage("work-page");
-    });
-    // id("abtme-btn").addEventListener("click", function() {
-    //   changePage("abtme-page");
-    // });
     id("husky-guide").addEventListener("click", function() {
       let projectName = this.id;
       projectName = projectName + "-page";
