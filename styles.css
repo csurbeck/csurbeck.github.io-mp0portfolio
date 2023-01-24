@@ -23,6 +23,30 @@ main {
   font-family: 'Manrope', sans-serif;
 }
 
+.lavender-text {
+  color: lavender;
+}
+
+.white-text {
+  color: white;
+}
+
+.black-background {
+  background-color: black;
+}
+
+.gray-background {
+  background-color: darkgray;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
 #header-bar-buttons,
 #connect-btns {
   display: flex;
