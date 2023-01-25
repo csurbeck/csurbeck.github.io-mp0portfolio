@@ -45,21 +45,37 @@
             </p>
           </article>
         </article>
-        <article id="issue">
-          <h4>Issues</h4>
-          <p>
-            An issue that I encountered on this assignment was configuring subpage navigation and
-            attaching css files to subpages. I learned that you didn't need to specify the folder
-            of the css files for subpages since the subpage css file was at the same level of the
-            HTML file that was referencing it. Unfortunately, an issue that I am still encountering
-            and haven't yet resolved is how to navigate between subpages. My website is set up to
-            successfully enable navigation from the home page to the different subpages, but when
-            the user attempts to navigate from one subpage to another (eg. from the cheatsheet page
-            to the 'about me' page), the browser displays a 404 File not Found error. I have a
-            suspicion this has to do with the user trying to navigate from one subpage level to
-            another without returning to the main home page level, but I am not sure how to resolve
-            this yet.
-          </p>
+        <article id="dev-process">
+          <h4>Development Process</h4>
+          <div>
+            <p>
+              The development process that I followed for this project started with generating the
+              image that I would use as my icon that would be displayed in the extension library as
+              well as on the top of my browser window. Although the production of this icon wasn't a
+              required part of the project, it gave me an opportunity to experiment with making web-
+              compatible icons with Adobe Illustrator. I made icons in 16x16 pixel and 128x128 pixel
+              sizes. From there, I wrote the HTML and CSS files for my pop-up window, which helped
+              me determine what the exact function of my extension would be given the functionalities
+              that would be displayed in the pop-up window. Next, I wrote the pop-up JavaScript file,
+              which signified my content-script to update the browser page when the 'deploy ladybugs'
+              button was clicked. From there, I wrote my content-script file, where I used the query-
+              select-all function to query all of the paragraph HTML elements on the page and then
+              append the little ladybug images to the end. I also wrote a CSS file to go along with
+              the content-script file to manage the size of the ladybug image. I also authored the
+              script to remove the ladybug images when they were clicked upon and increment the
+              ladybug count in the pop-up screen.
+            </p>
+            <div id="dev-images">
+              <div>
+                <img src="mp1wumats/unfinished-popup.png" alt="unfinished pop-up screen">
+                <p>Unfinished pop-up screen</p>
+              </div>
+              <div>
+                <img src="mp1wumats/finishedpopup.png" alt="finished pop-up screen">
+                <p>Finished pop-up screen</p>
+              </div>
+            </div>
+          </div>
         </article>
         <article id="css-transition" class="alternating">
           <article>
