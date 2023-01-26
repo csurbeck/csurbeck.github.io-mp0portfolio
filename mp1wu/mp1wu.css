@@ -92,7 +92,8 @@ h2 {
   font-size: 20px;
 }
 
-#future {
+#future,
+#kudos {
   padding-left: 200px;
   padding-right: 200px;
   font-size: 20px;
