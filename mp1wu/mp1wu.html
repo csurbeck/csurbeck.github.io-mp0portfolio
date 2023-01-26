@@ -79,19 +79,36 @@
             </div>
           </div>
         </article>
-        <article id="css-transition" class="alternating">
+        <article id="issues" class="alternating">
           <article>
-            <h4>CSS Transition</h4>
-            <div>
+            <h4>Issue Deep-Dive</h4>
+            <div id="content">
               <p>
-                The CSS transition that I implemented on this website causes elements to briefly
-                enlarge when the user hovers over them with their cursor. The HTML elements with this
-                feature on my website are my different project tiles on the home page as well as the
-                email and LinkedIn icons in my footer. I chose to integrate the transition on these
-                elements as visual feedback to the user as to which element their cursor is on, and if
-                it matches the element they wish to interact with.
+                A major issue that I ran into was being able to display my ladybug icons once they
+                had been appended to the end of the paragraph elements on the page. I was originally
+                confused by this issue because my extension was using the same image as the icon
+                for my extension in the extension library. I started doing some general Google-ing
+                to try and narrow down my problem, and eventually realized that to display my images
+                as images on the browser page, I had to include the image files in an object in the
+                manifest.json file that defined web-accessible resources from my files. I added my
+                image files as the value to the 'resources' key, and added the wikipedia URL as the
+                value to the 'matches' key. I thought this would now make the images available to be
+                displayed on the browser page, but when I reloaded the package and tried to
+                instantiate that event again, I was still receiving a 404 error. At this point, I
+                was totally stuck and reached out to my instructor over our message board with my
+                problem, where she guided me to the Chrome resource page that clarified that I
+                needed to use the <code>chrome.runtime.getURL()</code> function to generate the
+                URL that my image element was using as its source. This was the final piece to
+                fixing my problem, and after that my little ladybug images were successfully
+                displayed at the end of the page's paragraphs!
               </p>
-              <img src="mp0wumats/csstransition.gif" alt="gif of my CSS transition">
+              <div id="gif">
+                <img src="mp1wumats/extension.gif" alt="gif of my extension">
+                <p>
+                  GIF of ladybugs being added to the end of all paragraphs, and then the user
+                  clicking on them to "collect" them.
+                </p>
+              </div>
             </div>
           </article>
         </article>
