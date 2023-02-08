@@ -85,6 +85,24 @@ h2 {
   color: rebeccapurple;
 }
 
+#gallery-btn {
+  display: block;
+  margin: auto;
+  font-family: 'Manrope', sans-serif;
+  background-color: rgb(153, 91, 215);
+  color: white;
+  border: none;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-bottom: 35px;
+  height: 40px;
+  width: 200px;
+}
+
+#gallery-btn:hover {
+  cursor: pointer;
+}
+
 #objectives p{
   padding-left: 200px;
   padding-right: 200px;
@@ -125,15 +143,32 @@ h4 {
 #dev-images {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #dev-images img {
-  max-width: 350px;
+  max-width: 300px;
   border: 10px black solid;
+  margin: auto;
 }
 
 #dev-images p {
+  margin: auto;
   text-align: center;
+  font-size: 14px;
+  color: darkslategray;
+  max-width: 300px;
+}
+
+#random-dev img {
+  margin-top: 55px;
+}
+
+#content > div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 
 #issues div {
@@ -146,12 +181,17 @@ h4 {
   width: 600px;
 }
 
-#gif {
+#gifs {
   display: flex;
   flex-direction: column;
 }
 
-#gif p {
+#gifs > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#gifs p {
   width: 80%;
   font-size: 12px;
 }

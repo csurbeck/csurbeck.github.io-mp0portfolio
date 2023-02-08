@@ -32,11 +32,28 @@
     <main>
       <section>
         <h2>MP2 Write-Up</h2>
+        <a href="/sketchgallery/sketchgallery.html"><button id="gallery-btn">p5.js Sketch Gallery</button></a>
         <article class="alternating" id="overview">
           <article>
             <h4>Overview</h4>
             <p>
-
+              In MP2, I experimented with many functionalities from the p5.js library to code a
+              variety of sketches, each of which contained a different focus. These different
+              focuses included:
+              <ol>
+                <li>coding a static sketch</li>
+                <li>
+                  coding a sketch that relied on a random variable to for populating the canvas
+                  with shapes
+                </li>
+                <li>
+                  coding a sketch in which the draw function looped infinitely, simulating the
+                  motion of an object across the canvas
+                </li>
+                <li>coding a sketch which responded to some sort of user input</li>
+                <li>coding a sketch that produced some audio</li>
+                <li> coding a sketch that incorporated both audio and user input</li>
+              </ol>
             </p>
           </article>
         </article>
@@ -44,16 +61,43 @@
           <h4>Development Process</h4>
           <div>
             <p>
-
+              I approached each different type of sketch we needed to complete as a different mini
+              project. Before beginning to write the code for each of the six different types of
+              sketches, I would watch the prescribed coding train videos. Even though the videos
+              covered topics I was already pretty familiar with, it was very useful for me to see
+              the coding train instructor use them in the p5.js environment so that I could gain
+              more familiarity with how they functioned for making the sketches.
+            </p>
+            <p>
+              I breezed through
+              the static and random sketch generation stages pretty quickly, but then encountered
+              more complexity with the infinite loop sketch. My idea was a riff off one of the
+              example provided in the GitHub page of a ball moving around the canvas and bouncing off the
+              "walls", or edges of the screen, but including a square that was randomly generated
+              somewhere on the screen that the ball would also bounce off. The user input sketch, as
+              well as the user input & audio sketch, were my favorites as to how you could use the
+              mouseX function to make variables respond to user activity.
+            </p>
+            <p>
+              After completing my sketches, I added the write-up to my MP dropdown button and
+              created a sketch gallery that was accessible from my write-up page through the click
+              of a button at the top of my page.
             </p>
             <div id="dev-images">
               <div>
-                <img src="mp1wumats/unfinished-popup.png" alt="unfinished pop-up screen">
-                <p>Unfinished pop-up screen</p>
+                <img src="mp2wumats/unfinished-static.png" alt="unfinished static sketch">
+                <p>
+                  Unfinished static screen when I realized I only needed to invert X or Y and not
+                  both in order to make the X.
+                </p>
               </div>
-              <div>
-                <img src="mp1wumats/finishedpopup.png" alt="finished pop-up screen">
-                <p>Finished pop-up screen</p>
+              <div id="random-dev">
+                <img src="mp2wumats/unfinished-random.png" alt="unfinished random sketch">
+                <p>
+                  Unfinished random sketch before I realized I needed to round the randomly generated
+                  X and Y coordinates to elimante the overlap and achieve my goal of making the
+                  randomly populated squares appear to function like pixels.
+                </p>
               </div>
             </div>
           </div>
@@ -62,15 +106,59 @@
           <article>
             <h4>Issue Deep-Dive</h4>
             <div id="content">
-              <p>
-
-              </p>
-              <div id="gif">
-                <img src="mp1wumats/extension.gif" alt="gif of my extension">
+              <div>
                 <p>
-                  GIF of ladybugs being added to the end of all paragraphs, and then the user
-                  clicking on them to "collect" them.
+                  The main issue that I encountered and took me the most time to resolve was getting
+                  the "ball" to bounce off the generated obstacle in my infinite loop sketch. My
+                  first approach to this problem
+                  was checking if the x position of the ball was equivalent to an x position on the
+                  perimeter of the square, and if that was true, then check if the y position of the
+                  ball was also equivalent to a y position on the square's perimeter. I was
+                  essentially checking to if the point where the ball was matched a point on the
+                  perimeter of the square so that I could change the direction the ball was "moving".
+                  This was ultimately insufficient because I could determine if the point existed, but
+                  I couldn't determine where the point was on the square so that I could change the
+                  direction of the ball accordingly (i.e., change the x direction if the ball hit one
+                  of the sides or change the y direction if the ball hit the top or bottom of the square).
                 </p>
+                <p>
+                  My first attempt to resolve this issue was to try and determine if the ball was
+                  bouncing off the top/bottom or side of the obstacle by looking at the value in the
+                  array. I determined that if, for example, the x array contained values surrounding
+                  the current X value, the ball was encountering either the top or the bottom, and I
+                  would adjust the move variable accordingly. This still produced undesired behavior
+                  due to the conditionals I was using, which would occasionally resolve as true in
+                  cases that I wanted them to be false.
+                </p>
+                <p>
+                  My final approach enabled me to solve my issues of determining the coordinates of the
+                  perimeter of the object and also allowed me to evaluate which side of the obstacle
+                  the ball was hitting so I could adjust the "movement" of the ball accordingly. This
+                  approach was to instantiate four arrays, one for each side of the square obstacle,
+                  and store all of the coordinates that made up that side in the respective array. Then,
+                  in the draw function, I was able to evaluate the current XY coodinate of the ball
+                  everytime the draw function was executed and see if the current coordinates existed
+                  in one of the arrays. If it was located in one of them, I would either invert the
+                  X or Y direction. I also made sure to account for the fact that the coordinates of
+                  the ball were located in the center of the shape for evaluating the position with
+                  a 10 pixel differential so that the ball would change direction when its perimeter
+                  made contact with the obstacle.
+                </p>
+              </div>
+              <div id="gifs">
+                <div>
+                  <img src="mp2wumats/issue-deep-dive.gif" alt="gif of my issue">
+                  <p>
+                    GIF of my infinite loop code with undesired behavior.
+                  </p>
+                </div>
+                <div>
+                  <img src="mp2wumats/resolved-issue.gif" alt="gif of my issue after resolved">
+                  <p>
+                    GIF of my infinite loop code with desired behavior where ball cleanly bounces off
+                    the walls and obstacles.
+                  </p>
+                </div>
               </div>
             </div>
           </article>
@@ -79,12 +167,20 @@
           <article>
             <h4>Ideas for Future Development</h4>
             <p>
-              Moving forward with the development of ***, some ideas and features I
+              Moving forward with the development of my sketches using p5.js, some ideas and features I
               would like to integrate in the future are:
             </p>
             <ul>
-              <li>idea 1</li>
-              <li>idea 2</li>
+              <li>
+                Increase complexity with my infinite loop sketch by generating more squares/"obstacles",
+                but I anticipate that would involve storing data about the obstacles in a separate
+                collection as to differentiate the edges when occasionally their randomly generated
+                location would overlap
+              </li>
+              <li>
+                I would've liked experimenting adding an audio file of my own and then using the
+                p5.js library to generate some sort of correspnding visual display.
+              </li>
             </ul>
           </article>
         </article>
@@ -95,8 +191,9 @@
               Here are some web resources that were really helpful during my development process:
             </p>
             <ul>
-              <li>resource 1</li>
-              <li>resource 2</li>
+              <li>
+                <a href="https://p5js.org/reference/">p5.js Reference Page</a></li>
+              <li><a href="https://www.codecademy.com/article/p5js-creating-a-local-project">Creating a Local p5.js Project</a></li>
           </article>
         </article>
       </section>
