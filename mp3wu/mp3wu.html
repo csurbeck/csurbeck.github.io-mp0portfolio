@@ -33,6 +33,7 @@
     <main>
       <section>
         <h2>MP3 Write-Up</h2>
+        <a href="http://www.clairesurbeck.com/data-visualizer/"><button id="visualizer-btn">Data Visualization</button></a>
         <article class="alternating" id="overview">
           <article>
             <h4>Overview</h4>
@@ -45,7 +46,7 @@
                 displayed compares the number of museums in each state. The visualizations can be navigated
                 between using the buttons at the top of the screen.
               </p>
-              <img src="mp3wumats/functionality.gif" alt="gif of my data visualizations">
+              <img id="obj-img" src="mp3wumats/functionality.gif" alt="gif of my data visualizations">
             </div>
           </article>
         </article>
@@ -107,44 +108,43 @@
             <div id="content">
               <div>
                 <p>
-                  The main issue that I encountered and took me the most time to resolve was getting
-                  the "ball" to bounce off the generated obstacle in my infinite loop sketch. My
-                  first approach to this problem
-                  was checking if the x position of the ball was equivalent to an x position on the
-                  perimeter of the square, and if that was true, then check if the y position of the
-                  ball was also equivalent to a y position on the square's perimeter. I was
-                  essentially checking to if the point where the ball was matched a point on the
-                  perimeter of the square so that I could change the direction the ball was "moving".
-                  This was ultimately insufficient because I could determine if the point existed, but
-                  I couldn't determine where the point was on the square so that I could change the
-                  direction of the ball accordingly (i.e., change the x direction if the ball hit one
-                  of the sides or change the y direction if the ball hit the top or bottom of the square).
+                  I would say that I didn't have one major issue that I can dive really deep into,
+                  but rather a few smaller ones that I can speak to:
                 </p>
                 <p>
-                  My first attempt to resolve this issue was to try and determine if the ball was
-                  bouncing off the top/bottom or side of the obstacle by looking at the value in the
-                  array. I determined that if, for example, the x array contained values surrounding
-                  the current X value, the ball was encountering either the top or the bottom, and I
-                  would adjust the move variable accordingly. This still produced undesired behavior
-                  due to the conditionals I was using, which would occasionally resolve as true in
-                  cases that I wanted them to be false.
+                  My first challenge was cleaning and reconfiguring the data. In past projects where
+                  I have queried data using SQL, I was using Node.js and accessing a .db file. In this
+                  situation, I was able to get the dataset as a CSV file but I was unsure how to convert
+                  it to a DB file so I could work with it in a familiar way. After struggling for a
+                  while, I further explored the idea of saving query outputs in new CSV files. I was
+                  able to find documentation on how to do so, but every time I tried to save the
+                  output the new CSV file, I had no idea where the new file was going. At this point,
+                  I was just working with SQLite3 in my terminal, so I thought if I moved to a more
+                  comprehensive platform, I could have greater control over the newly created file.
+                  I tried downloading SQLiteStudio as well as working on Azure to make a new dataset
+                  but hit deadends at both. Finally, I found a small bit of documentation that
+                  showed that I could directly access the file I just created with the
+                  <code>.system open "filename".csv</code>. From there, I was able to directly open
+                  the new file and export it into my data folder, and I was all set!
                 </p>
                 <p>
-                  My final approach enabled me to solve my issues of determining the coordinates of the
-                  perimeter of the object and also allowed me to evaluate which side of the obstacle
-                  the ball was hitting so I could adjust the "movement" of the ball accordingly. This
-                  approach was to instantiate four arrays, one for each side of the square obstacle,
-                  and store all of the coordinates that made up that side in the respective array. Then,
-                  in the draw function, I was able to evaluate the current XY coodinate of the ball
-                  everytime the draw function was executed and see if the current coordinates existed
-                  in one of the arrays. If it was located in one of them, I would either invert the
-                  X or Y direction. I also made sure to account for the fact that the coordinates of
-                  the ball were located in the center of the shape for evaluating the position with
-                  a 10 pixel differential so that the ball would change direction when its perimeter
-                  made contact with the obstacle.
+                  My second major issue was figuring out how to configure the fuctionality so that
+                  the user could navigate back and forth between the two data visualizations by
+                  clicking on the buttons at the top of the screen. My first approach was to clear
+                  the inner HTML of the canvas HTML element everytime a button was clicked so that
+                  the chart could be created on a blank canvas. Unfortunately for me, Chart.js doesn't
+                  work like that so I ran into an error. I did some research as to how to correctly
+                  clear the canvas in order to use it again. I found the documentation that instructed
+                  to use the Chart.js <code>.destroy()</code> method, so I tried implementing that
+                  as the first step everytime I tried to create a new chart. This caused me to run
+                  into a fence-post problem where I was attempting to destroy a chart before I even
+                  made the first one. From there, I deduced that if I loaded one visualization upon
+                  the 'load' window event and from there always saved the current chart in a global
+                  variable, I could then access that variable and destroy it before rendering a new
+                  chart upon the "click" event with the two buttons at the top of the screen.
                 </p>
               </div>
-              <div id="gifs">
+              <!-- <div id="gifs">
                 <div>
                   <img src="mp2wumats/issue-deep-dive.gif" alt="gif of my issue">
                   <p>
@@ -158,7 +158,7 @@
                     the walls and obstacles.
                   </p>
                 </div>
-              </div>
+              </div> -->
             </div>
           </article>
         </article>
@@ -177,7 +177,7 @@
               </li>
               <li>
                 I would've liked to figure out how to expand the y-axis to show all 50 states and add
-                some more color and details to my graph.
+                some more color and details to my charts.
               </li>
             </ul>
           </article>
