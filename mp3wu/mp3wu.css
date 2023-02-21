@@ -99,8 +99,9 @@ h2 {
   width: 200px;
 }
 
-#gallery-btn:hover {
+#visualizer-btn:hover {
   cursor: pointer;
+  background-color: rebeccapurple;
 }
 
 #objectives p{
@@ -151,7 +152,7 @@ h4 {
 }
 
 #dev-images img {
-  max-width: 300px;
+  max-width: 400px;
   border: 10px black solid;
   margin: auto;
 }
