@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset='utf-8' />
+    <title>MP3 Write-Up</title>
+    <link href='proposal.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Yatra+One&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <section id="header-bar">
+        <div id="header-name">
+          <a href="/index.html"><button id="main-btn">Claire Surbeck</button></a>
+        </div>
+        <div id="header-bar-buttons">
+          <a href="/resume/resume.html" class="header-btn"><button id="resume-btn" class="header-btn">Resume</button></a>
+          <a href="/cheatsheet/cheatsheet.html" class="header-btn"><button>Cheatsheet</button></a>
+          <div class="dropdown">
+            <button class="dropbtn">Write Ups</button>
+            <div class="ddcontent">
+              <a href="/mp0wu/mp0wu.html">MP0</a>
+              <a href="/mp1wu/mp1wu.html">MP1</a>
+              <a href="/mp2wu/mp2wu.html">MP2</a>
+              <a href="/mp3wu/mp3wu.html">MP3</a>
+              <a href="/proposal/proposal.html">Final Proposal</a>
+            </div>
+          </div>
+          <a href="/aboutme/aboutme.html" class="header-btn"><button id="abtme-btn">About Me</button></a>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section>
+        <h2>Final Project Proposal</h2>
+        <p>
+          For my final project, I plan to build a data visualizer that enables users to explore
+          Strava aggregated Strava data to view trends between different activities over
+          differentiating timeperiods.
+        </p>
+        <article class="alternating" id="descriptions">
+          <article>
+            <h4>Stage Descriptions</h4>
+            <div>
+
+            </div>
+          </article>
+        </article>
+        <article id="dev-process">
+          <h4>Projected Development Process</h4>
+          <ol>
+            <li>
+              Research and make sense of the Strava API. Map out what data I will need to access
+              from the API, how many calls to the API I will need to make, and the parameters on
+              which those calls will be made
+            </li>
+            <li>Make datasets from API calls that will be used by the data visualization</li>
+            <li>
+              Make the graphs chart interface with the different buttons/areas for user input
+              to change the displayed data.
+            </li>
+            <li>Program the user input to change the collected data</li>
+            <li>Display the data</li>
+            <li>Prototype Version</li>
+            <li>Enable the change from one display to another display</li>
+            <li>Add details such as labels</li>
+            <li>Make the details/labels responsive to the changes in user input</li>
+            <li>Explore adding a third dimension to the user access to data</li>
+            <li>Final Version</li>
+          </ol>
+        </article>
+        <article id="unknown" class="alternating">
+          <article>
+            <h4>Unknowns</h4>
+            <div id="content">
+              <ul>
+                <li>What and how to get the right data from the API</li>
+                <li>How to efficiently make many calls to an API</li>
+                <li>How to make new datasets with the API response</li>
+                <li>How to make a query based off user input</li>
+                <li>How to configure the user input options</li>
+              </ul>
+            </div>
+          </article>
+        </article>
+        <article id="stretch">
+          <article>
+            <h4>Stretch Goals</h4>
+            <p>
+              Some stretch goals for this project are:
+            </p>
+            <ul>
+              <li>Building new tables of data from sequenced and specific API calls</li>
+              <li>Using Chart.js and d3.js more comprehensively</li>
+              <li>
+                Implementing different types of data visualizations rather than just bar graphs. I
+                would like to explore representing differing averages of values in pie charts and
+                other graphs.
+              </li>
+              <li>Designing how the user will interact with the interface to make specific queries</li>
+            </ul>
+          </article>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <section id="footer-bar">
+        <p>Let's Connect!</p>
+        <a href="https://www.linkedin.com/in/claire-surbeck/"><img id="linked-in" src="proposalmats/linkedin-icon.png" alt="LinkedIn Icon"></a>
+        <a href="mailto:csurbeck@uw.edu"><img id="email" src="mp3wumats/email-icon.png" alt="Email Icon"></a>
+      </section>
+      <div id="icon-citation">
+        <p>
+          <a target="_blank" href="https://icons8.com/icon/pBIeObS8d0aU/circled-envelope">Circled Envelope</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
+        <p>
+          <a target="_blank" href="https://icons8.com/icon/62925/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
