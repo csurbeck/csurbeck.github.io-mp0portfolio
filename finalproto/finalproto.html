@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset='utf-8' />
+    <title>Prototype Write Up</title>
+    <link rel="icon" type="image/x-icon" href="../mats/ladybug-favicon.png">
+    <link href='finalproto.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Yatra+One&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <section id="header-bar">
+        <div id="header-name">
+          <a href="../"><button id="main-btn">Claire Surbeck</button></a>
+        </div>
+        <div id="header-bar-buttons">
+          <a href="../resume/resume.html" class="header-btn"><button id="resume-btn" class="header-btn">Resume</button></a>
+          <a href="../cheatsheet/cheatsheet.html" class="header-btn"><button>Cheatsheet</button></a>
+          <div class="dropdown">
+            <button class="dropbtn">Write Ups</button>
+            <div class="ddcontent">
+              <a href="../mp0wu/mp0wu.html">MP0</a>
+              <a href="../mp1wu/mp1wu.html">MP1</a>
+              <a href="../mp2wu/mp2wu.html">MP2</a>
+              <a href="../mp3wu/mp3wu.html">MP3</a>
+              <a href="../proposal/proposal.html">Final Proposal</a>
+              <a href="../finalproto/finalproto.html">Final Prototype</a>
+            </div>
+          </div>
+          <a href="../aboutme/aboutme.html" class="header-btn"><button id="abtme-btn">About Me</button></a>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section>
+        <h2>Final Prototype Write-Up</h2>
+        <a href="rainbowpiano/index.html"><button id="visualizer-btn">Piano Prototype</button></a>
+        <a href="https://github.com/csurbeck/project_prototype"><button id="visualizer-btn">GitHub Repo</button></a>
+        <article class="alternating" id="overview">
+          <article>
+            <h4>Overview</h4>
+            <div>
+              <p>
+                In the pivot I made while creating my final project, I decided to switch gears and
+                focus on building a comprehensive web "piano" using the p5.js library. I really enjoyed
+                working with this javascript library in the second mini project, and I also feel
+                comfortable and familiar with the technology, which felt like a better starting place
+                for my final project then trying to jump off the deep end with a new web tool that I
+                was not nearly as familiar with. For the prototype, I made a bare-bones replica of
+                the piano before I refine it. There is multiple aspect of user feedback as they interact
+                with the keys.
+              </p>
+              <img id="obj-img" src="finalproto/keyboard.gif" alt="gif of my keyboard">
+            </div>
+            <h4>Project Scope</h4>
+            <p>
+              I definitely changed the scope of my project a lot from my proposal to this first
+              prototype. In fact, I changed the entire premise of my project, but I realized that I
+              I definitely theoretically bit off more than I could chew with my inital proposal.
+              When I started to try and set up the Strava API, I realized that gathering the types
+              of responses I wanted was going to be difficult since I only had a limited amount of times
+              I could make requests, I had to make different access keys and tokens, could only access
+              certain data, and was going to have a hard time transforming that data into a structure
+              that could be read by the chart.js and turned into a graph. I made the decision to switch
+              and make my project with with p5.js was founded in my familiarity with the library and
+              my confidence that I could expand and achieve deeper complexity with the library.
+            </p>
+          </article>
+        </article>
+        <article id="dev-process">
+          <h4>Development Process</h4>
+          <div>
+            <p>
+              Firstly, I populated the screen with 9 rectangles and gave them curved edges to
+              resemble piano keys. Then, I created an if-loop that corresponded to the creation of
+              each key that determined whether the user was currently hovering over they key with
+              their mouse. I had to use both the mouseX and the mouseY function to determine whether
+              the cursor was accurately over the "key". If the condition resolved to true (the mouse
+              was hovering over the key), then I changed it so that the fill was black instead of
+              white and changed the dimensions of the rectangle to make it look as if it had been
+              pushed downwards.
+            </p>
+            <div id="dev-images">
+              <div>
+                <img src="finalproto/basekeyboard.jpeg" alt="basic keyboard">
+                <p>
+                  Snapshot of the base keyboard before I implemented that code that made the fill
+                  color change and the shape translate when the mouse was over it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="issues" class="alternating">
+          <article>
+            <h4>Issue Deep-Dive</h4>
+            <div id="content">
+              <div>
+                <p>
+                  The main issue I encountered was getting the key to change colors when hovered
+                  above the way I wanted. At first, I approached the functionality by changing the
+                  fill cover when the coordinates of the mouse were within a certain range. This made
+                  it so if I hovered over one key, all of the keys would change to the fill color
+                  that was supposed the indicate the key was being "pressed". This led me to the
+                  realization that I would need to create a conditional if-loop for the creation of
+                  each shape so that the coordinates of the mouse were checked upon the creation of
+                  each individual piano key. This meant I had to implement a lot of if-loops but it
+                  enabled the fill color to be set to the appropriate value for the creation of each
+                  key. This also enabled me to implement the translation of the shape that occured
+                  when the user hovered over it.
+                </p>
+              </div>
+            </div>
+          </article>
+        </article>
+        <article id="future">
+          <article>
+            <h4>Ideas for Future Development</h4>
+            <p>
+              Moving forward with the development of my keyboard,
+              some ideas and features I would like to address in the future are:
+            </p>
+            <ul>
+              <li>
+                Adding more color and user feedback elements to the keyboard
+              </li>
+              <li>
+                Adding scalar tones that correspond to the key as well as changing the feedback so
+                that it sounds like a note rather than a constant drone
+              </li>
+              <li>
+                I want to make another instrument, like perhaps a drum!
+              </li>
+            </ul>
+          </article>
+        </article>
+        <article id="kudos" class="alternating">
+          <article>
+            <h4>Kudos!</h4>
+            <p>
+              Here are some web resources that were really helpful during my development process:
+            </p>
+            <ul>
+              <li><a href="https://p5js.org/reference/">p5.js Reference Page</a></li>
+              <li><a href="https://www.chartjs.org/docs/latest/getting-started/">Chart.js: Getting Started</a></li>
+              <li><a href="https://www.chartjs.org/docs/latest/charts/bar.html#horizontal-bar-chart">Chart.js: Horizontal Bar Chart</a></li>
+              <li><a href="https://www.chartjs.org/docs/latest/developers/api.html">Chart.js: APIs</a></li>
+              <li><a href="https://www.kaggle.com/datasets/imls/museum-directory?resource=download">Kaggle Museum Dataset</a></li>
+          </article>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <section id="footer-bar">
+        <p>Let's Connect!</p>
+        <a href="https://www.linkedin.com/in/claire-surbeck/"><img id="linked-in" src="../mats/linkedin-icon.png" alt="LinkedIn Icon"></a>
+        <a href="mailto:csurbeck@uw.edu"><img id="email" src="../mats/email-icon.png" alt="Email Icon"></a>
+      </section>
+      <div id="icon-citation">
+        <p>
+          <a target="_blank" href="https://icons8.com/icon/pBIeObS8d0aU/circled-envelope">Circled Envelope</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
+        <p>
+          <a target="_blank" href="https://icons8.com/icon/62925/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
