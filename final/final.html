@@ -38,70 +38,43 @@
       <section>
         <h2>Final Project Write-Up</h2>
         <a href="rainbow_piano_final/index.html"><button id="visualizer-btn">Rainbow Piano</button></a>
-        <a href="https://github.com/csurbeck/project_prototype"><button id="visualizer-btn">GitHub Repo</button></a>
+        <a href="https://github.com/csurbeck/final_project"><button id="visualizer-btn">GitHub Repo</button></a>
         <article class="alternating" id="overview">
           <article>
             <h4>Overview</h4>
             <div>
               <p>
-                In the pivot I made while creating my final project, I decided to switch gears and
-                focus on building a comprehensive web "piano" using the p5.js library. I really enjoyed
-                working with this javascript library in the second mini project, and I also feel
-                comfortable and familiar with the technology, which felt like a better starting place
-                for my final project then trying to jump off the deep end with a new web tool that I
-                was not nearly as familiar with. For the prototype, I made a bare-bones replica of
-                the piano before I refine it. There is multiple aspect of user feedback as they interact
-                with the keys.
+                For my final project, I made a rainbow piano using p5.js that utilizes multiple
+                aspects of the javascript library to make an interactive digital musical instrument
+                that emits certain notes according to the key that the user is hovering over. The
+                keys change color and translate to depict that they are being "pressed" when the user
+                hovers their cursor over the respective key.
               </p>
-              <img id="obj-img" src="finalproto/keyboard.gif" alt="gif of my keyboard">
+              <img id="obj-img" src="finalmats/keyboard.gif" alt="gif of my final keyboard">
             </div>
-            <h4>Project Scope</h4>
-            <p>
-              I definitely changed the scope of my project a lot from my proposal to this first
-              prototype. In fact, I changed the entire premise of my project, but I realized that I
-              I definitely theoretically bit off more than I could chew with my inital proposal.
-              When I started to try and set up the Strava API, I realized that gathering the types
-              of responses I wanted was going to be difficult since I only had a limited amount of times
-              I could make requests, I had to make different access keys and tokens, could only access
-              certain data, and was going to have a hard time transforming that data into a structure
-              that could be read by the chart.js and turned into a graph. I made the decision to switch
-              and make my project with with p5.js was founded in my familiarity with the library and
-              my confidence that I could expand and achieve deeper complexity with the library.
-            </p>
           </article>
         </article>
         <article id="dev-process">
           <h4>Development Process</h4>
           <div>
             <p>
-              Firstly, I populated the screen with 9 rectangles and gave them curved edges to
-              resemble piano keys. Then, I created an if-loop that corresponded to the creation of
-              each key that determined whether the user was currently hovering over they key with
-              their mouse. I had to use both the mouseX and the mouseY function to determine whether
-              the cursor was accurately over the "key". If the condition resolved to true (the mouse
-              was hovering over the key), then I changed it so that the fill was black instead of
-              white and changed the dimensions of the rectangle to make it look as if it had been
-              pushed downwards.
+              The first thing I did was find a way to generate the different RGB color codes for the
+              color scheme vision I had in my head. I was able to add the different fill colors into
+              the if-loops I created in the project's first development stage so that the fill color
+              changed as the draw function cascaded down. I added a lighter shade of the color for
+              when the key wasn't "pressed" and a darker color for when it was. Then, I started working
+              to add the sound to the keys. Once again, I was able to use the if-loops for the separate
+              keys, and I ended up using the if-loops to set the frequency of the oscillators to
+              mimic scalar notes.
             </p>
             <div id="dev-images">
               <div>
-                <img src="finalproto/basekeyboard.jpeg" alt="basic keyboard">
+                <img src="finalmats/keyboard-progress.jpeg" alt="progress shot of adding color to the keyboard">
                 <p>
-                  Snapshot of the base keyboard before I implemented that code that made the fill
-                  color change and the shape translate when the mouse was over it.
+                  Snapshot of the keyboard as I was adding different fill colors to the keys.
                 </p>
               </div>
             </div>
-            <h4>Time Management</h4>
-            <p>
-              In review, I think the amount of time I spent on the revised final project plan was
-              much more reasonable than my initial plan. I invested around two hours trying to set
-              up the Strava API without any tangible success, and the web aids to try and help users
-              make sense of the different calls you could make to the API were confusing. For the
-              amount of time I took trying to accomplish that task, the amount of progress I made was
-              unreasonable. Once I changed my plan, the development of my prototype began to come
-              along in a much more timely fashion.
-            </p>
           </div>
         </article>
         <article id="issues" class="alternating">
@@ -110,17 +83,17 @@
             <div id="content">
               <div>
                 <p>
-                  The main issue I encountered was getting the key to change colors when hovered
-                  above the way I wanted. At first, I approached the functionality by changing the
-                  fill cover when the coordinates of the mouse were within a certain range. This made
-                  it so if I hovered over one key, all of the keys would change to the fill color
-                  that was supposed the indicate the key was being "pressed". This led me to the
-                  realization that I would need to create a conditional if-loop for the creation of
-                  each shape so that the coordinates of the mouse were checked upon the creation of
-                  each individual piano key. This meant I had to implement a lot of if-loops but it
-                  enabled the fill color to be set to the appropriate value for the creation of each
-                  key. This also enabled me to implement the translation of the shape that occured
-                  when the user hovered over it.
+                  The main issue I encountered was getting the correct notes to play when I hovered
+                  over the key. The way I initially learned to use the oscillator with the p5.js
+                  library where it ran continuously while the code was being run, which presented
+                  a bit of a problem because I wanted the notes to only be played when the cursor
+                  was hovering over the key. I tried to integrate turning the oscillator off or setting
+                  the frequency to 0 in the if-loops, but then the functions started to counteract
+                  and the frequency was either set to 0 or turned off the whole time, producing no
+                  sound. My solution to this issue was having frequency set to 0 when the cursors
+                  coordinates were outside of where the keys where, so that the oscillator went quiet
+                  when the cursor was hovering over keys, but then would produce sound when the
+                  cursor was above the keys.
                 </p>
               </div>
             </div>
@@ -154,6 +127,7 @@
             </p>
             <ul>
               <li><a href="https://pages.mtu.edu/~suits/notefreqs.html">Tuning Frequencies in Hz</a></li>
+              <li><a href="https://www.rapidtables.com/web/color/RGB_Color.html">RGB Calculator</a></li>
           </article>
         </article>
       </section>
