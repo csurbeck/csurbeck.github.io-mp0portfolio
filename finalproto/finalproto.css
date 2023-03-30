@@ -104,7 +104,7 @@ h2 {
   background-color: rebeccapurple;
 }
 
-#objectives p{
+#objectives p {
   padding-left: 200px;
   padding-right: 200px;
   padding-bottom: 100px;
@@ -129,7 +129,8 @@ h4 {
 }
 
 #overview,
-#dev-process {
+#dev-process,
+#issues {
   padding-left: 200px;
   padding-right: 200px;
   padding-bottom: 100px;
@@ -180,10 +181,6 @@ h4 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-#issues > div > p {
-  width: 600px;
 }
 
 #gifs {
